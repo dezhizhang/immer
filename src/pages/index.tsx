@@ -20,9 +20,9 @@ function Todos() {
   return <>
     <Button onClick={handelAdd}>增加</Button>
     <ul>
-    {/* {
+    {
       todos.list.map((item:string) => <li key={item}>{item}</li>)
-    } */}
+    }
     </ul>
   </>
 }
