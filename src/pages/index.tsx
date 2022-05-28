@@ -1,4 +1,4 @@
-import { produce} from 'immer';
+import { produce} from '../immer/index';
 
 let baseState = {
   list:['1']
