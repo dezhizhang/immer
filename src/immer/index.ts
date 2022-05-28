@@ -1,4 +1,4 @@
-import { isObject, isArray } from './is';
+import { isObject, isArray, isFunction } from './is';
 const INTERNAL = Symbol('INTERNAL');
 
 export function produce(baseState: any, producer: any) {
@@ -35,6 +35,10 @@ export function toProxy(baseState: any,callParentCopy?:Function) {
                     });
                 }
                 return keyToProxy[key];
+            }else if(isFunction(value)) {
+              internal.mutated = true;
+              callParentCopy && callParentCopy();
+              return value.bind(internal.draftState)  
             }
             return internal.mutated
                 ? (internal.draftState as any)[key]

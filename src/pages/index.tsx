@@ -4,7 +4,7 @@ let baseState = {
   list:['1']
 }
 
-let nextState = produce(baseState,(draft) => {
+let nextState = produce(baseState,(draft: { list: string[]; }) => {
   draft.list.push('2')
 })
 
