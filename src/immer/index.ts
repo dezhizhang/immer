@@ -1,5 +1,5 @@
 import { isObject, isArray, isFunction } from './is';
-const INTERNAL = Symbol('INTERNAL');
+export const INTERNAL = Symbol('INTERNAL');
 
 export function produce(baseState: any, producer: any) {
     let proxy = toProxy(baseState);
